@@ -15,6 +15,24 @@ router.post(
   foodController.createFood
 );
 
-router.get("/", authMiddleware.authUserMiddleware, foodController.getFoodItems)
+router.get("/", authMiddleware.authUserMiddleware, foodController.getFoodItems);
+
+router.post(
+  "/like",
+  authMiddleware.authUserMiddleware,
+  foodController.likedfood
+);
+
+router.post(
+  "/save",
+  authMiddleware.authUserMiddleware,
+  foodController.saveFood
+);
+
+router.get(
+  "/save",
+  authMiddleware.authUserMiddleware,
+  foodController.getsavedFood
+);
 
 module.exports = router;
