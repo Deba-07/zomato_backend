@@ -13,10 +13,18 @@ const foodSchema = new mongoose.Schema(
     description: {
       type: String,
     },
-    foodpartner: {
+    foodPartner: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "foodPartner",
+      ref: "foodpartner",
     },
+    likeCount: {
+      type: Number,
+      default: 0,
+    },
+    saveCount: {
+      type: Number,
+      default: 0,
+    }
   },
   { timestamps: true }
 );
